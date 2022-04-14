@@ -1,13 +1,15 @@
 {
   "auth": {
-    "burgerfanatics572df3a4": {
+    "burgerfanatics02a92540": {
       "service": "Cognito",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],
       "customAuth": false,
       "frontendAuthConfig": {
         "socialProviders": [],
-        "usernameAttributes": [],
+        "usernameAttributes": [
+          "EMAIL"
+        ],
         "signupAttributes": [
           "EMAIL"
         ],
