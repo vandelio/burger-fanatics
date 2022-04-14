@@ -8,14 +8,14 @@ Social media and review platform for burger entusiasts
  - Create a test Amplify project
  
 # Preperations:
- - Create outline of system context
- - Create outline of container diagram
- - Create visual cues for the process
- - Wireframe a simple page diagram
- - Mock up a quick landingpage design
- - Setup git repo
- - Setup a react app and initialize amplify project
- - Test the deployed amplify project
+ - Create outline of system context                         - 👍
+ - Create outline of container diagram                      - 👍
+ - Create visual cues for the process                       - 👍
+ - Wireframe a simple page diagram                          - 👍
+ - Mock up a quick landingpage design                       - 👍
+ - Setup git repo                                           - 👍
+ - Setup a react app and initialize amplify project         - 👍
+ - Test the deployed amplify project                        - 👍
 
 # Project Requirements
   - Create landing page                                     - Priority 1
