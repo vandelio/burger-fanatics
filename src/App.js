@@ -42,7 +42,7 @@ if(userComponent === null || activePageName === null) return 'Loading...';
           classNames='fade'
         >
         <>
-          {userComponent}
+          {userComponent} 
         </>
         </CSSTransition>
       </SwitchTransition> 
