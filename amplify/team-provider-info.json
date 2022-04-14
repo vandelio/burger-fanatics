@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-burgerfanatics-dev-10137-authRole",
+      "UnauthRoleArn": "arn:aws:iam::914213204144:role/amplify-burgerfanatics-dev-10137-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::914213204144:role/amplify-burgerfanatics-dev-10137-authRole",
+      "Region": "eu-north-1",
+      "DeploymentBucketName": "amplify-burgerfanatics-dev-10137-deployment",
+      "UnauthRoleName": "amplify-burgerfanatics-dev-10137-unauthRole",
+      "StackName": "amplify-burgerfanatics-dev-10137",
+      "StackId": "arn:aws:cloudformation:eu-north-1:914213204144:stack/amplify-burgerfanatics-dev-10137/af98b710-bb7d-11ec-9ba1-0a1f5368d8a2",
+      "AmplifyAppId": "d37v69fiuu3mra"
+    },
+    "categories": {
+      "auth": {
+        "burgerfanatics572df3a4": {}
+      }
+    }
+  }
+}
