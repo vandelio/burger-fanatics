@@ -23,3 +23,48 @@ Transitions
 .fade-exit-active {
     transition: opacity 500ms;
 }
+
+/* fadeInDown */
+.fade-enter {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+}
+
+.fade-exit {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}
+
+.fade-enter-active {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}
+
+.fade-exit-active {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+}
+
+.fade-enter-active,
+.fade-exit-active {
+    transition: opacity 500ms;
+}
+
+/* 
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -100%, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.fadeInDown {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+    animation-name: fadeInDown;
+} */

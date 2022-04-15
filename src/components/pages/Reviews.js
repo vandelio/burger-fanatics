@@ -1,8 +1,7 @@
 import PageLayout from "./PageLayout";
 function Reviews() {
   return (
-    <PageLayout>
-          Yo Reviews
+    <PageLayout name="Reviews">
     </PageLayout>
   );
 }

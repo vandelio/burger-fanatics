@@ -1,8 +1,7 @@
 import PageLayout from "./PageLayout";
 function Spots() {
   return (
-    <PageLayout>
-          Spots
+    <PageLayout name="Spots">
     </PageLayout>
   );
 }

@@ -6,7 +6,7 @@ function MyProfile({ signOut, user }) {
     if(!user) return <PageLayout></PageLayout>
   return (
     <>
-     <PageLayout>
+     <PageLayout name="MyProfile">
         <>
             <h1>Hello {user.username}</h1>
             <button onClick={signOut}>Sign out</button>
