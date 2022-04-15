@@ -25,8 +25,11 @@ img,svg{
     display: flex;
     flex-direction: column;
 }
-.align-center{  
+.align-self-center{  
     align-self: center;
+}
+.align-center{  
+    align-items: center;
 }
 .space-between{  
     justify-content: space-between
@@ -68,4 +71,10 @@ img,svg{
     border-left: 3px solid var(--lightdark);
     color:var(--lightdark);
     box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12);
+}
+
+/* avatar */
+.css-1a81169-MuiAvatar-root{
+    background:var(--highlight) !important;
+    color:var(--darkdark) !important;
 }

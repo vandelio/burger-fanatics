@@ -27,23 +27,5 @@
       }
     }
   },
-  "geo": {
-    "placeindex984119c8": {
-      "isDefault": true,
-      "providerPlugin": "awscloudformation",
-      "service": "PlaceIndex",
-      "dataProvider": "HERE",
-      "dataSourceIntendedUse": "SingleUse",
-      "accessType": "AuthorizedAndGuestUsers",
-      "dependsOn": [
-        {
-          "category": "auth",
-          "resourceName": "burgerfanatics02a92540",
-          "attributes": [
-            "UserPoolId"
-          ]
-        }
-      ]
-    }
-  }
+  "geo": {}
 }
