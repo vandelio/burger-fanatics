@@ -18,18 +18,19 @@ Social media and review platform for burger entusiasts
  - Test the deployed amplify project
 
 # Project Requirements
+  - Review local burger spots - rating
+  - Share pictures of burgers
+  - Find nearby resturants
+
   - Create landing page                                     - Priority 1
   - Implement nav tabbar with 4 tabs                        - Priority 1
     - Home
-    - Reviews
     - Burger Spots
     - My Profile
 
   - Pages in project:
-    - Reviews page                                          - Priority 1
     - Burger spots overview and search                      - Priority 1
     - Single bruger spot page                               - Priority 1
-    - Create review                                         - Priority 1
     - Login / sign up                                       - 2
     - My Profile                                            - 2
   
