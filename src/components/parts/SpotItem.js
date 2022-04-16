@@ -43,11 +43,16 @@ export default function RecipeReviewCard(props) {
           </Avatar>
         }
         action={
-          <Rating
+          <CardActions disableSpacing>
+            <IconButton aria-label="Calculated rating">
+            <Rating
               readOnly
               name="simple-controlled"
               value={props.content.rating}
             />
+            </IconButton>
+          </CardActions>
+          
         }
         title={props.content.title}
         subheader={props.content.place}

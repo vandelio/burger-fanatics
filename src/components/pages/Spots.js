@@ -1,17 +1,32 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PageLayout from "./PageLayout";
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import List from "../parts/List";
 import SpotItem from "../parts/SpotItem";
+import SearchCenter from "../parts/SearchCenter";
 import '../../styles/list.css';
 
 import listOfBurgerSpots from '../../hooks/listOfBurgerSpots';
 import listOfReviewActivities from '../../hooks/listOfReviewActivities';
 
 function Spots() {
-const burgerSpots = listOfBurgerSpots;
+const [burgerSpots,setBurgerSpots] = React.useState(listOfBurgerSpots);
+const [searchResult, setSearchResult] = React.useState('');
 const reviewActivities = listOfReviewActivities;
+
+useEffect(()=>{
+  if(searchResult !== ''){
+    console.log(searchResult);
+    // let obj = burgerSpots.find(o => {
+    //   if(o.title.includes(searchValue) || o.desc.includes(searchValue)) return o;
+    // });
+    // console.log('serah', obj)
+    setBurgerSpots([searchResult]);
+  }else{
+    setBurgerSpots(listOfBurgerSpots);
+  }
+},[searchResult])
 
   const FeedTop = () => {
     return <Box sx={{display:'flex', flexDirection:'row', alignItems:'center', justifyContent:'space-between'}}>
@@ -21,11 +36,14 @@ const reviewActivities = listOfReviewActivities;
 
 
   return (
-    <PageLayout parts={FeedTop}>
+    <PageLayout parts={FeedTop()}>
+    <Box sx={{maxWidth:'500px', margin:'auto',}}>
+      <SearchCenter burgerSpots={burgerSpots} setSearchValue={setSearchResult} searchValue={searchResult} />  
+    </Box>
+    <Box sx={{ borderTop: 1, borderColor: 'divider', paddingTop:'20px' }}>
        <div className='flex-row flex-start'>
           <section className="flex-column feed-container">
             <Grid container justifyContent="center" spacing={2}>
-              {/* <List list={burgerSpots} /> */}
                 {burgerSpots.map((v,i)=>{
                   return <Grid key={i} item>
                     <SpotItem key={i} content={v} />
@@ -41,6 +59,7 @@ const reviewActivities = listOfReviewActivities;
           </Box>
         </div>
     
+      </Box>
     </PageLayout>
   );
 }

@@ -14,6 +14,9 @@
     -ms-border-radius:4px;
     -o-border-radius:4px;
 }
+#root .feed-container {
+    width: 100%;
+}
 #root .feed-container .MuiGrid-container{
     flex-direction: column;
     /* margin:auto; */

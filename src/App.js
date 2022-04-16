@@ -15,7 +15,6 @@ import ThumbsUpDownIcon from '@mui/icons-material/ThumbsUpDown';
 import RoomOutlinedIcon from '@mui/icons-material/RoomOutlined';
 import FaceOutlinedIcon from '@mui/icons-material/FaceOutlined';
 
-import SharingCenter from "./components/parts/SharingCenter";
 import { Button, Flex, TextField } from '@aws-amplify/ui-react';
 
 import './styles/base.css';
@@ -53,7 +52,7 @@ function App() {
     console.log('useEffect', componentIndexToName[activePageIndex]);
     setActivePageName(componentIndexToName[activePageIndex].name)
     setUserComponent(componentIndexToName[activePageIndex].component);
-    setShowHeader(componentIndexToName[activePageIndex].name === 'Home'); 
+    // setShowHeader(componentIndexToName[activePageIndex].name === 'Home'); 
   },[activePageIndex])
 
   if(userComponent === null || activePageName === null) return 'Loading...';
@@ -61,7 +60,7 @@ function App() {
   
   return (
     <>
-      <div className={`head-container flex-column align-center-desktop ${showHeader || window.innerWidth > 979 ? 'showFull' : ''}`}>
+      <div className={`head-container flex-column align-center-desktop showFull`}>
         {/* sqitchf to flex width: 100%; */}
         <header className="flex-row-desktop  space-between">
           <section className={`head flex-row space-between`}>
@@ -70,9 +69,6 @@ function App() {
           </section>
           <IconTabs activePageIndex={activePageIndex} setActivePageIndex={setActivePageIndex} tablist={componentIndexToName}/>
         </header>
-        <CSSTransition in={showHeader} timeout={50} classNames="fadeInDown">
-          <SharingCenter />
-        </CSSTransition>
       </div>
       <SwitchTransition>
         <CSSTransition key={true} addEndListener={(node, done)=> node.addEventListener("transitionend", done, false)} classNames='fade'>

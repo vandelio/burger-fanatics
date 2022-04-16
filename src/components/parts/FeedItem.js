@@ -8,9 +8,7 @@ import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
 import Collapse from '@mui/material/Collapse';
-import Avatar from '@mui/material/Avatar';<Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-            R
-          </Avatar>
+import Avatar from '@mui/material/Avatar';
 import IconButton from '@mui/material/IconButton';
 import { red } from '@mui/material/colors';
 import FavoriteIcon from '@mui/icons-material/Favorite';
@@ -20,6 +18,8 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 import '../../styles/feed.css';
 import { valueToPercent } from '@mui/base';
 import Chip from '@mui/material/Chip';
+import { Badge } from '@mui/material';
+import {addLike} from "../../hooks/apiFunctions";
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -33,11 +33,13 @@ const ExpandMore = styled((props) => {
 }));
 
 export default function RecipeReviewCard(props) {
+  const [comments] = React.useState(props.comments ? props.comments : [{text:'Nice, very nice indeed, can you take me next time please!', createdAt:'234324', likes:0, username:'Benjamin Franklin'},{text:'Cool stuff!', createdAt:'234324', likes:0, username:'Vlodomir Ismishizchlooongname'},{text:'Message me next time', createdAt:'234324', likes:0, username:'Johanna B'}]);
   const [expanded, setExpanded] = React.useState(false);
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
+
 
   const Comment = (props) => {
     // {text:'Nice!', createdAt:'234324', likes:0},
@@ -56,9 +58,10 @@ export default function RecipeReviewCard(props) {
               </Box>
             </Box>
   }
+  console.log('feed likes', props)
 
   return (
-    <Card className='card-feed-item' sx={{ }}>
+    <Card className='card-feed-item' sx={{  minWidth:500 }}>
       <CardHeader
         avatar={
           <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
@@ -68,14 +71,18 @@ export default function RecipeReviewCard(props) {
         action={
           <CardActions disableSpacing>
             <IconButton aria-label="add to favorites">
-              <FavoriteIcon />
+            <Badge badgeContent={props.likes ? props.likes : 2} color="primary">
+              <FavoriteIcon onClick={()=>{ 
+                //props.addLike(props.key)
+                }} />
+            </Badge>
             </IconButton>
             <IconButton aria-label="share" className="noCursor">
               <ShareIcon />
             </IconButton>
           </CardActions>
         }
-        title={props.username}
+        title={props.user}
         subheader={props.createdAt}
       />
       {props.imagePath && 
@@ -83,39 +90,46 @@ export default function RecipeReviewCard(props) {
           component="img"
           height="194"
           image={props.imagePath}
-          alt={props.content}
+          alt={props.text}
         />
       }
       <CardContent>
         <p>
-          {props.content}
+          {props.text}
         </p>
       </CardContent>
       <Divider />
-      <CardActions disableSpacing   onClick={handleExpandClick}>
 
-        <CardContent>
-            {props.comments.length-1 + ' Comments'}
-        </CardContent>
-        <ExpandMore
-          expand={expanded}
-          aria-expanded={expanded}
-          aria-label="show more"
-        >
-          
-          <ExpandMoreIcon />
-        </ExpandMore>
-      </CardActions>
-      <Collapse in={expanded} timeout="auto" unmountOnExit>
-        <CardContent>
-        {
-          props.comments.map((v)=>{
-            return <Comment {...v} />
-          })
-        }
-        </CardContent>
-      </Collapse>
-      
+      {comments && 
+        <>
+          <CardActions disableSpacing   onClick={handleExpandClick}>
+
+              <CardContent>
+                {comments.length-1 + ' Comments'}
+              </CardContent>
+              
+              <ExpandMore
+                expand={expanded}
+                aria-expanded={expanded}
+                aria-label="show more"
+              >
+                
+                <ExpandMoreIcon />
+              </ExpandMore>
+            
+          </CardActions>
+          <Collapse in={expanded} timeout="auto" unmountOnExit>
+            <CardContent>
+            {
+              comments.map((v)=>{
+                return <Comment {...v} />
+              })
+            }
+            </CardContent>
+          </Collapse>
+        </>
+      }
+
     </Card>
   );
 }

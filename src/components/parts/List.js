@@ -7,17 +7,15 @@ const List = (props) => {
       <Collection type="list" items={props.list} gap="1.5rem" width={'100%'}>
         {(item, index) => (
             <Card className={props.className}  key={index} padding="1rem">
-                <div className="flex-row align-center space-between">
-                  <div>
-                    <Heading level={6} fontWeight={'400'}>{item.title}</Heading>
-                    <Text>{item.description}</Text>
-                    
-                    <div className="flex-row space-between">
-                      <small>{item.user || item.place}</small>
-                      <small>{item.datetime}</small>
-                    </div>
-                    
+                
+                <div>
+                  <Heading level={6} fontWeight={'400'}>{item.title}</Heading>
+                  <Text>{item.description}</Text>
+                  <div className="flex-row space-between">
+                    <small>{item.user || item.place}</small>
+                    <small>{item.datetime}</small>
                   </div>
+                
                  <div className="flex-row align-center">
                   {item.rating && 
                       <Rating

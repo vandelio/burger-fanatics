@@ -11,8 +11,8 @@ return (
                 {props.parts && <div>{props.parts}</div>}
             </div>
             <Divider/>
-            <Box sx={{ marginTop:'20px' }}>
-             {props.children}
+            <Box sx={{ marginTop:'0' }}>
+                {props.children}
             </Box>
         </Box>
     </Box>
