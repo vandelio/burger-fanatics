@@ -3,21 +3,40 @@
         width: 70%;
     }
 }
-#root .card-feed-item.css-1ri6ub7-MuiPaper-root-MuiCard-root{
+#root .card-feed-item{
     width:100%;
     flex-basis:500px;
     max-width: 500px;
+    min-width: 100% !important;
     border-radius:4px;
     -webkit-border-radius:4px;
     -moz-border-radius:4px;
     -ms-border-radius:4px;
     -o-border-radius:4px;
 }
+#root .feed-container .MuiGrid-container{
+    flex-direction: column;
+    /* margin:auto; */
+}
+#root .card-feed-item > .MuiCardActions-root{
+    background: var(--lightlight);
+}
+
+#root .MuiGrid-item .card-feed-item .css-46bh2p-MuiCardContent-root{
+    padding-top:0;
+    padding-bottom:0;
+}
+
 @media screen and (min-width:540px) {
-    #root .card-feed-item.css-1ri6ub7-MuiPaper-root-MuiCard-root{
+
+    #root .feed-container .MuiGrid-container{
+        flex-direction: row;
+    }
+    #root  .MuiGrid-item  .card-feed-item{
         width:500px;
         flex-basis:500px;
         max-width: 500px;
+        min-width: 500px !important;
         border-radius:4px;
         -webkit-border-radius:4px;
         -moz-border-radius:4px;
@@ -28,7 +47,7 @@
 }
 
 @media screen and (min-width:980px) {
-    #root .card-feed-item.css-1ri6ub7-MuiPaper-root-MuiCard-root{
+    #root .card-feed-item{
         width:100%;
         flex-basis:100%;
         max-width: 100%;

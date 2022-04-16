@@ -1,7 +1,7 @@
 .head-container{
     background:var(--lightlight);
     position: sticky;
-    top: -88px;
+    top: 0; /* 88px*/
     z-index: 10000;
     height:auto;
     transform:translateY(-100);
@@ -10,6 +10,18 @@
     -ms-transform:translateY(-100);
     -o-transform:translateY(-100);
 }
+.showFull.head-container{
+    background:var(--lightlight);
+    position: sticky;
+    top: -88px; /* 88px*/
+    z-index: 10000;
+}
+
+@media screen and (min-width:980px) {
+    section.head .head-container{
+        position: relative;
+    }
+}
 .head-container.showFull{
     height:auto;  
     transform:translateY(0%);
@@ -17,6 +29,9 @@
     -moz-transform:translateY(0%);
     -ms-transform:translateY(0%);
     -o-transform:translateY(0%);
+}
+.head-container .amplify-label{
+    display:none;
 }
 header{
     width: 100%;

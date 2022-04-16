@@ -12,6 +12,9 @@
     height:100%;
     background:var(--lightlight);
 }
+.noCursor{
+    cursor: not-allowed;
+}
 img,svg{
     max-width: 100%;
     height:auto;
@@ -51,6 +54,24 @@ img,svg{
 }
 
 
+.pageTop{
+    margin:auto;
+    margin-bottom:20px;
+    height:40px;
+}
+.pageTop *{
+    font-size: 1em;
+    font-weight: normal;
+}
+
+@media screen and (min-width:980px) {
+    .pageTop{
+        margin-left:unset;
+        margin-right:unset;
+        width:100%;
+    }
+}
+
 /* Mui override */
 .css-heg063-MuiTabs-flexContainer{
     justify-content:space-around;
@@ -77,4 +98,7 @@ img,svg{
 .css-1a81169-MuiAvatar-root{
     background:var(--highlight) !important;
     color:var(--darkdark) !important;
+}
+.css-19kzrtu{
+    padding-top:10px !important;
 }

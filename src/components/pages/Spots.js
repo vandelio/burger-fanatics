@@ -12,17 +12,26 @@ import listOfReviewActivities from '../../hooks/listOfReviewActivities';
 function Spots() {
 const burgerSpots = listOfBurgerSpots;
 const reviewActivities = listOfReviewActivities;
+
+  const FeedTop = () => {
+    return <Box sx={{display:'flex', flexDirection:'row', alignItems:'center', justifyContent:'space-between'}}>
+      <h1>Burger Spots</h1>
+    </Box>
+  }
+
+
   return (
-    <PageLayout name="Burger Spots">
+    <PageLayout parts={FeedTop}>
        <div className='flex-row flex-start'>
           <section className="flex-column feed-container">
             <Grid container justifyContent="center" spacing={2}>
               {/* <List list={burgerSpots} /> */}
-              {burgerSpots.map((v,i)=>
-              <Grid key={i} item>
-                <SpotItem key={i} content={v} />
-              </Grid>
-              )}
+                {burgerSpots.map((v,i)=>{
+                  return <Grid key={i} item>
+                    <SpotItem key={i} content={v} />
+                  </Grid>
+                })
+              }
             </Grid>
           </section>
 

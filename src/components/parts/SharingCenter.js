@@ -7,10 +7,9 @@ const SharingCenter = () => {
     const [value, setValue] = React.useState('')
       return (
         <Box sx={{ width: '100%',height:'100%', display: 'flex', flexDirection:'column',  }}>
-          <Box sx={{ width: '100%',height:'100%', display: 'flex', padding:'6px 20px 16px', flexDirection:'column', borderBottom: 1, borderColor: 'divider' }}>
+          <Box sx={{ width: '100%',height:'100%', display: 'flex', padding:'16px 20px 16px', flexDirection:'column', borderBottom: 1, borderColor: 'divider' }}>
     
-            <TextField value={value} direction="column" inputMode="text" name="sharingexperience"
-              placeholder="How was you last Burger experience?" type="text" wrap="nowrap" onChange={(e)=>
+            <TextField value={value} direction="column" inputMode="text" name="sharingexperience" label={null} placeholder="How was you last Burger experience?" type="text" wrap="nowrap" onChange={(e)=>
               {console.info(e.currentTarget.value); setValue(e.currentTarget.value)}}
               />
           </Box>
