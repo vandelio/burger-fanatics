@@ -1,0 +1,8 @@
+.openinghours{
+    width: 124px;
+    text-align: right;
+    line-height: 1.2em;
+}
+.amplify-card.activity > div > div{
+    width: 100%;
+}
