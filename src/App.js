@@ -1,9 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import { Amplify } from 'aws-amplify';
 import awsExports from './aws-exports';
-
 import ReactDOM from "react-dom";
-
 import IconTabs from "./components/parts/IconTabs";
 import Home from "./components/pages/Home";
 import Reviews from "./components/pages/Reviews";
@@ -59,6 +57,8 @@ function App() {
   },[activePageIndex])
 
   if(userComponent === null || activePageName === null) return 'Loading...';
+
+  
   return (
     <>
       <div className={`head-container flex-column align-center-desktop ${showHeader || window.innerWidth > 979 ? 'showFull' : ''}`}>
