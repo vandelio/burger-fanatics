@@ -8,34 +8,16 @@ import FeedItem from "../parts/FeedItem";
 import List from "../parts/List";
 
 import {useCurrentWidth} from '../../hooks/useCurrentWidth';
-
-
 import { Button, Flex, TextField } from '@aws-amplify/ui-react';
 
-function Home() {
-const [feed] = React.useState([{},{},{},{},{}])
-const [IdolsActivity] = React.useState([{},{},{},{},{}])
-let width = useCurrentWidth();
+import listOfReviewActivities from '../../hooks/listOfReviewActivities';
 
-const list = [
-  {
-      title: 'Reviewed a Burger in Frankfurt',
-      user:'Bob',
-      datetime:'22.2.2022 14:02'
-  },
-  {
-      title: 'Liked a post made by Bob',
-      user:'Joe',
-      datetime:'22.2.2022 13:02'
-  },
-  {
-      title: 'Visited Burger World in Copenhagen',
-      description:
-      "This hopping town is an adventure capital and the burger sport is located right on Lake",
-      user:'Cindy',
-      datetime:'21.2.2022 12:52'
-  },
-];
+
+function Home() {
+  const list = listOfReviewActivities;
+  const [feed] = React.useState([{},{},{},{},{}])
+  const [IdolsActivity] = React.useState([{},{},{},{},{}])
+  let width = useCurrentWidth();
 
 return (
 <PageLayout name="">
