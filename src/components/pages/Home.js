@@ -53,7 +53,7 @@ function Home() {
 
 return (
 <PageLayout parts={HomeFeedTop()}>
-  <Box sx={{maxWidth:'500px', margin:'auto',}}>
+  <Box className="sharingCenterContainer">
     <SharingCenter setFeed={setFeed} feed={feed}  />  
   </Box>
   <Box sx={{ borderTop: 1, borderColor: 'divider', paddingTop:'20px' }}>
@@ -67,9 +67,9 @@ return (
             </Grid>
           )}
           {feed.length === 0 &&
-          <Box sx={{marginTop:'30px'}}>
-            <h2>You are really a first mover!! Be the first to post!</h2>
-          </Box>
+            <Box sx={{marginTop:'30px', textAlign:'center'}}>
+              <h2>We are loading the most resent posts!</h2>
+            </Box>
           }
           
 

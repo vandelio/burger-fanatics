@@ -17,12 +17,11 @@ const SharingCenter = (props) => {
 
     
       return (<>
-      {/* Insert module to trigger save post, with auth */}
       
         <Box sx={{ width: '100%',height:'100%', display: 'flex', flexDirection:'column',  }}>
           <Box sx={{ width: '100%',height:'100%', display: 'flex', padding:'16px 0 16px', flexDirection:'column',}}>
     
-            <TextField value={value} direction="column" inputMode="text" name="sharingexperience" label={null} placeholder="How was you last Burger experience?" type="text" wrap="nowrap" onChange={(e)=>
+            <TextField value={value} direction="column" inputMode="text" name="sharingexperience" label="How was you last Burger experience?" type="text" wrap="nowrap" onChange={(e)=>
               {console.info(e.currentTarget.value); setValue(e.currentTarget.value)}}
               />
           </Box>
@@ -33,8 +32,8 @@ const SharingCenter = (props) => {
                   Upload image
                 </View> */}
     
-                <Box ariaLabel="Send it to the moon!" role="button" onClick={()=> {setClicked(true)}}>
-                  {!savePostClicked && value !== '' && <Authenticator>
+                  {!savePostClicked && value !== '' && <Box ariaLabel="Send it to the moon!" role="button" onClick={()=> {setClicked(true)}}> 
+                  <Authenticator>
                       {({ signOut, user }) => {
                         return <main>
                           <Box ariaLabel="Send it to the moon!" role="button" onClick={()=> {savePost(value, props.feed, props.setFeed, user.username)}}>
@@ -42,9 +41,9 @@ const SharingCenter = (props) => {
                           </Box>
                       </main>
                       }}
-                    </Authenticator>}
+                    </Authenticator>
                   
-                </Box>
+                </Box>}
               </Flex>
             </Box>
           }

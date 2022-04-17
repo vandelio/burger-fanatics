@@ -8,6 +8,7 @@
     flex-basis:500px;
     max-width: 500px;
     min-width: 100% !important;
+    margin:auto;
     border-radius:4px;
     -webkit-border-radius:4px;
     -moz-border-radius:4px;
@@ -32,9 +33,9 @@
 
 @media screen and (min-width:540px) {
 
-    #root .feed-container .MuiGrid-container{
+    /* #root .feed-container .MuiGrid-container{
         flex-direction: row;
-    }
+    } */
     #root  .MuiGrid-item  .card-feed-item{
         width:500px;
         flex-basis:500px;

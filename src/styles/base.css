@@ -102,3 +102,23 @@ img,svg{
 .css-19kzrtu{
     padding-top:10px !important;
 }
+
+
+/* rating row */
+
+.ratingRowWrap{
+    padding:15px;
+}
+.ratingRow{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+@media screen and (max-width:500px) {
+    .ratingRow{
+        display:flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    
+}
