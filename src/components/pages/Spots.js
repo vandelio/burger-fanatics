@@ -9,6 +9,10 @@ import '../../styles/list.css';
 
 import listOfBurgerSpots from '../../hooks/listOfBurgerSpots';
 import listOfReviewActivities from '../../hooks/listOfReviewActivities';
+import getRandomFromArray from '../../hooks/getRandomFromArray';
+import burgerHeadImage1 from "../../assets/burgers/1small.jpg";
+import burgerHeadImage2 from "../../assets/burgers/2small.jpg";
+import burgerHeadImage3 from "../../assets/burgers/3small.jpg";
 
 function Spots() {
 const [burgerSpots,setBurgerSpots] = React.useState(listOfBurgerSpots);
@@ -16,30 +20,7 @@ const [searchResult, setSearchResult] = React.useState(null);
 // const [burgerSpotsToShow,setBurgerSpotsToShow] = React.useState([]);
 const reviewActivities = listOfReviewActivities;
 
-// useEffect(()=>{
-//   setBurgerSpotsToShow(burgerSpots);
-// },[])
-// useEffect(()=>{
-//   console.log('searchResult', searchResult);
-//   console.log('listOfBurgerSpots', listOfBurgerSpots);
-
-//   if(searchResult !== ''){
-//     console.log(searchResult);
-//     // let obj = burgerSpots.find(o => {
-//     //   if(o.title.includes(searchValue) || o.desc.includes(searchValue)) return o;
-//     // });
-//     // console.log('serah', obj)
-//     setBurgerSpotsToShow([searchResult]);
-//   }else{
-//     setBurgerSpotsToShow(listOfBurgerSpots);
-//   }
-// },[searchResult])
-
-  const FeedTop = () => {
-    return <Box sx={{display:'flex', flexDirection:'row', alignItems:'center', justifyContent:'space-between'}}>
-      <h1>Burger Spots</h1>
-    </Box>
-  }
+const imageArray = [burgerHeadImage1,burgerHeadImage2,burgerHeadImage3]
 
 
   return (
@@ -51,7 +32,7 @@ const reviewActivities = listOfReviewActivities;
        <div className='flex-row flex-start'>
           <section className="flex-column feed-container">
             <Grid container justifyContent="center" spacing={2}>
-                {burgerSpots.filter((v)=>{
+                {burgerSpots.map((v,i)=>{v.imagePath = getRandomFromArray(imageArray); return v;}).filter((v)=>{
                   if(searchResult !== null ){
                     if(v.id === searchResult.id){
                       return v; 

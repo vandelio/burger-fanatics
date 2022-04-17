@@ -6,3 +6,9 @@
 .amplify-card.activity > div > div{
     width: 100%;
 }
+
+.spotReviewImage{
+    max-height: 200px;
+    width:auto;
+    max-width: 100%;
+}
