@@ -65,7 +65,7 @@ function App() {
         <header className="flex-row-desktop  space-between">
           <section className={`head flex-row space-between`}>
             <Logo />
-            <NotificationCenter/>
+            <NotificationCenter />
           </section>
           <IconTabs activePageIndex={activePageIndex} setActivePageIndex={setActivePageIndex} tablist={componentIndexToName}/>
         </header>

@@ -2,7 +2,7 @@ import { Image } from '@aws-amplify/ui-react';
 import logo from '../../assets/logo.svg';
 function Logo() {
 return  <svg version="1.1" className="logo" x="0px" y="0px"
-width="704.651px" height="309.302px" viewBox="0 0 704.651 309.302" enable-background="new 0 0 704.651 309.302">
+width="704.651px" height="309.302px" viewBox="0 0 704.651 309.302" enableBackground="new 0 0 704.651 309.302">
 <path  fill="currentColor" d="M203.582,262.364l13.019-98.355c-2.771,0.321-5.272,1.058-7.5,2.208c-2.233,1.154-4.081,2.927-5.545,5.32
 c-1.468,2.396-2.505,5.538-3.114,9.428c-0.609,3.891-0.68,8.733-0.21,14.526c0.147,1.839,0.377,3.324,0.682,4.463
 c0.303,1.137,0.612,2.037,0.927,2.698c0.315,0.661,0.595,1.175,0.838,1.532c0.242,0.359,0.373,0.681,0.396,0.965

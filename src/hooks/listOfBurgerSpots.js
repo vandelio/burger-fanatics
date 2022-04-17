@@ -128,30 +128,30 @@ rating: '4',
     place: 'Aalborg',
     openinghours: 'mon-fri 10-22 sat-sun 12-22'
   },
-//   {
-//     id:"",
-// title: "Pagoden Foodtrucks(Ølgod)",
-//     desc:'All of our menu items are inspired by national cuisine and have been created by our head chef, (CN), after studying authentic national cuisine in ____. Not only do we have fresh flown-in seafood from the northeast, but we also have a variety of handcrafted cocktails, wine, and beer to choose from, and the best burgers in the world.  Come dine with us & experience an authentic national_ meal in an intimate dining space. We look forward to serving you!', 
-// rating: '4',
-//     place: 'Ølgod',
-//     openinghours: 'mon-fri 10-22 sat-sun 12-22'
-//   },
-//   {
-//     id:"",
-// title: "Guldhammers(Horsens)",
-//     desc:'All of our menu items are inspired by national cuisine and have been created by our head chef, (CN), after studying authentic national cuisine in ____. Not only do we have fresh flown-in seafood from the northeast, but we also have a variety of handcrafted cocktails, wine, and beer to choose from, and the best burgers in the world.  Come dine with us & experience an authentic national_ meal in an intimate dining space. We look forward to serving you!', 
-// rating: '4',
-//     place: 'Horsens',
-//     openinghours: 'mon-fri 10-22 sat-sun 12-22'
-//   },
-//   {
-//     id:"",
-// title: "Burger Boom(Aarhus)",
-//     desc:'All of our menu items are inspired by national cuisine and have been created by our head chef, (CN), after studying authentic national cuisine in ____. Not only do we have fresh flown-in seafood from the northeast, but we also have a variety of handcrafted cocktails, wine, and beer to choose from, and the best burgers in the world.  Come dine with us & experience an authentic national_ meal in an intimate dining space. We look forward to serving you!', 
-// rating: '4',
-//     place: 'Aarhus',
-//     openinghours: 'mon-fri 10-22 sat-sun 12-22'
-//   },
+  {
+    id:"17",
+title: "Pagoden Foodtrucks -Ølgod",
+    desc:'All of our menu items are inspired by national cuisine and have been created by our head chef, (CN), after studying authentic national cuisine in ____. Not only do we have fresh flown-in seafood from the northeast, but we also have a variety of handcrafted cocktails, wine, and beer to choose from, and the best burgers in the world.  Come dine with us & experience an authentic national_ meal in an intimate dining space. We look forward to serving you!', 
+rating: '4',
+    place: 'Ølgod',
+    openinghours: 'mon-fri 10-22 sat-sun 12-22'
+  },
+  {
+    id:"18",
+title: "Guldhammers - Horsens",
+    desc:'All of our menu items are inspired by national cuisine and have been created by our head chef, (CN), after studying authentic national cuisine in ____. Not only do we have fresh flown-in seafood from the northeast, but we also have a variety of handcrafted cocktails, wine, and beer to choose from, and the best burgers in the world.  Come dine with us & experience an authentic national_ meal in an intimate dining space. We look forward to serving you!', 
+rating: '4',
+    place: 'Horsens',
+    openinghours: 'mon-fri 10-22 sat-sun 12-22'
+  },
+  {
+    id:"19",
+title: "Burger Boom - Aarhus",
+    desc:'All of our menu items are inspired by national cuisine and have been created by our head chef, (CN), after studying authentic national cuisine in ____. Not only do we have fresh flown-in seafood from the northeast, but we also have a variety of handcrafted cocktails, wine, and beer to choose from, and the best burgers in the world.  Come dine with us & experience an authentic national_ meal in an intimate dining space. We look forward to serving you!', 
+rating: '4',
+    place: 'Aarhus',
+    openinghours: 'mon-fri 10-22 sat-sun 12-22'
+  },
 //   {
 //     id:"",
 // title: "Highway 51(Randers)",

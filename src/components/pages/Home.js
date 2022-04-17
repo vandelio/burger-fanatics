@@ -1,27 +1,22 @@
 import React from 'react';
 // import Typography from '@mui/material/Typography';
+import LunchDiningIcon from '@mui/icons-material/LunchDining';
 import Box from '@mui/material/Box';
-import Skeleton from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Avatar from '@mui/material/Avatar';
-import { Icon, View } from '@aws-amplify/ui-react';
 import PageLayout from "./PageLayout";
 import FeedItem from "../parts/FeedItem";
 import List from "../parts/List";
 import {useCurrentWidth} from '../../hooks/useCurrentWidth';
-import { Button, Flex, TextField } from '@aws-amplify/ui-react';
-import listOfReviewActivities from '../../hooks/listOfReviewActivities';
-import {API, graphqlOperation} from 'aws-amplify'
-import {listPosts} from '../../graphql/queries'
+import listOfInterestingActivities from '../../hooks/listOfInterestingActivities';
 import SharingCenter from "../parts/SharingCenter";
 
-import {updatePost} from '../../graphql/mutations'
 import {fetchPosts} from "../../hooks/apiFunctions";
 
 
 function Home() {
   const [feed, setFeed] = React.useState([]);
-  const list = listOfReviewActivities;
+  const list = listOfInterestingActivities;
   const [IdolsActivity] = React.useState([{},{},{},{},{}])
   let width = useCurrentWidth();
 
@@ -52,7 +47,7 @@ function Home() {
 
 
 return (
-<PageLayout parts={HomeFeedTop()}>
+<PageLayout >
   <Box className="sharingCenterContainer">
     <SharingCenter setFeed={setFeed} feed={feed}  />  
   </Box>
@@ -68,6 +63,8 @@ return (
           )}
           {feed.length === 0 &&
             <Box sx={{marginTop:'30px', textAlign:'center'}}>
+
+              <LunchDiningIcon className="slashIconLoad" size="big"/>
               <h2>We are loading the most resent posts!</h2>
             </Box>
           }
@@ -77,8 +74,9 @@ return (
       </section>
       
 
-      <Box className="hideBelow980" sx={{ width: '30%',height:'100%', display: 'flex', paddingBottom:'20px', paddingLeft:'20px', flexDirection:'column' }}>
-        <List className="activity" list={list} />
+      <Box className="hideBelow920" sx={{ width: '30%', minWidth:'295px',height:'100%', display: 'flex', paddingBottom:'20px', paddingLeft:'20px', flexDirection:'column' }}>
+          <div className="listHeadline">Recent Social Activity</div>
+          <List className="activity" list={list} />
       </Box>
     </div>
   </Box>

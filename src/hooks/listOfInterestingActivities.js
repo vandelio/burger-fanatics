@@ -1,4 +1,4 @@
-const listOfInterestedActivities = [
+const listOfInterestingActivities = [
     {
         title: 'Reviewed a Burger in Frankfurt',
         user:'Bob',
@@ -18,4 +18,4 @@ const listOfInterestedActivities = [
     },
   ]
 
-  export default listOfInterestedActivities;
+  export default listOfInterestingActivities;

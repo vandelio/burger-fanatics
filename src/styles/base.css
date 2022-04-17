@@ -1,11 +1,28 @@
-#root{
+body{
     font-family: 'Montserrat';
     --darkdark: #042e3f;
     --darklight: #0e6772;
     --lightdark: #42a6a5;
     --lightlight: #f9f9f9; 
     --highlight:#cfefa1;
-    
+    color:var(--darkdark) !important;
+}
+body p,
+body ul,
+body li,
+body b,
+body i,
+body u,
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6{
+    color:var(--darkdark);
+}
+
+#root{
     display: flex;
     flex-direction: column;
     flex-basis:100%;
@@ -40,6 +57,10 @@ img,svg{
 .hideBelow980{
     display: none !important;
 }
+
+.hideBelow920{
+    display: none !important;
+}
 @media screen and (min-width:980px) {
     .flex-row-desktop{
         display: flex;
@@ -53,6 +74,11 @@ img,svg{
     }
 }
 
+@media screen and (min-width:800px) {
+    .hideBelow920{
+        display: block !important;
+    }
+}
 
 .pageTop{
     margin:auto;
@@ -72,21 +98,6 @@ img,svg{
     }
 }
 
-/* Mui override */
-.css-heg063-MuiTabs-flexContainer{
-    justify-content:space-around;
-}
-
-/* chip */
-.MuiChip-colorPrimary.MuiChip-filledPrimary{
-    background:var(--darklight);
-    color:var(--highlight);
-}
-.MuiChip-colorPrimary.MuiChip-outlinedPrimary{
-    border-color:var(--darklight);
-    color:var(--darkdark);
-}
-
 /* amplify card */
 .amplify-card{
     border-left: 3px solid var(--lightdark);
@@ -100,13 +111,19 @@ img,svg{
     color:var(--darkdark) !important;
 }
 .css-19kzrtu{
-    padding-top:10px !important;
+    padding-top:0px !important;
 }
 
 
 /* rating row */
-
+.ratingRow-container{
+    padding:0;
+    margin-top:20px;
+}
 .ratingRowWrap{
+    background:var(--lightlight); 
+    margin-top:20px; 
+    margin-bottom:20px;
     padding:15px;
 }
 .ratingRow{
@@ -122,3 +139,89 @@ img,svg{
     }
     
 }
+
+/* right column list */
+.listHeadline{
+    font-size:0.7em;
+    padding:0 0 10px 0;
+    color:var(--darkdark);
+}
+@media screen and (min-width:980px) {
+
+    .listHeadline{
+        padding-top:15px;
+    }
+        
+}
+
+
+/* sharingCenterContainer */
+.sharingBar{
+    width:  100%;
+    height: 100%; 
+    display:  flex; 
+    padding: 16px 0 16px;
+    flex-direction:row;
+}
+.sharingBar button{
+    margin-left: 20px !important;
+    width: 167px;
+}
+
+@media screen and (max-width:480px) {
+    .sharingBar{
+        flex-direction:column;
+    }
+    .sharingBar button{
+        width:100%;
+        margin-left: 0 !important;
+        margin-top: 20px;
+    }
+}
+.slashIconLoad{
+    color:var(--lightdark);
+    font-size:80px;
+    transform: rotate(9deg);
+    -webkit-transform: rotate(9deg);
+    -moz-transform: rotate(9deg);
+    -ms-transform: rotate(9deg);
+    -o-transform: rotate(9deg);
+}
+
+.sharingModalWrap{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    -webkit-transform:translate(-50%,-50%);
+    -moz-transform:translate(-50%,-50%);
+    -ms-transform:translate(-50%,-50%);
+    -o-transform:translate(-50%,-50%);
+}
+@media screen and (max-width:480px) {
+    .sharingModalWrap{
+        width:100%;
+    }
+}
+
+
+
+/* Mui override */
+.css-heg063-MuiTabs-flexContainer{
+    justify-content:space-around;
+}
+
+/* chip */
+.MuiChip-colorPrimary.MuiChip-filledPrimary{
+    background:var(--darklight);
+    color:var(--highlight);
+}
+.MuiChip-colorPrimary.MuiChip-outlinedPrimary{
+    border-color:var(--darklight);
+    color:var(--darkdark);
+}
+
+.MuiModal-root > .MuiBox-root{
+    border:none;
+}
+
