@@ -2,9 +2,7 @@ import * as React from 'react';
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
-import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-
 import CardHeader from '@mui/material/CardHeader';
 import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
@@ -17,7 +15,8 @@ import { red } from '@mui/material/colors';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import MoreVertIcon from '@mui/icons-material/MoreVert';
+
+import ReviewSpot from './ReviewSpot';
 import '../../styles/feed.css';
 
 const ExpandMore = styled((props) => {
@@ -33,44 +32,54 @@ const ExpandMore = styled((props) => {
 
 export default function RecipeReviewCard(props) {
   const [expanded, setExpanded] = React.useState(false);
+  const [showReviewModal, setShowReviewModal] = React.useState(false);
+
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
 
+
+  const Review = (props) => {
+    return <li>{props.text}</li>
+  }
+
+  const AvatarName = () => {
+    let names = props.content.title.replace('-','').split(' ');
+    return names[0].substr(0,1) + names[1].substr(0,1)
+  }
   return (
     <Card className='card-feed-item' sx={{ minWidth:500 }}>
       <CardHeader
         avatar={
-          <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-            R
+          <Avatar sx={{ fontSize:'1em'}} aria-label="recipe">
+           <AvatarName/>
           </Avatar>
         }
         action={
           <CardActions disableSpacing>
-            <IconButton  aria-label="Calculated rating">
+            
               <Rating
                 name="size-small"
                 size="small" 
                 readOnly
-                value={props.content.rating}
+                value={Number(props.content.rating)}
               />
-            </IconButton>
           </CardActions>
           
         }
         title={props.content.title}
         subheader={props.content.place}
       />
-      <CardMedia
+      {/* <CardMedia
         component="img"
         height="194"
         image="/static/images/cards/paella.jpg"
         alt="Paella dish"
-      />
+      /> */}
       <CardContent>
         <p>
-          {props.content.desc}
+          {props.content.desc.substring(0,100)}
         </p>
       </CardContent>
       <CardActions disableSpacing>
@@ -80,70 +89,53 @@ export default function RecipeReviewCard(props) {
         <IconButton aria-label="share">
           <ShareIcon />
         </IconButton>
-        <ExpandMore
-          expand={expanded}
-          onClick={handleExpandClick}
-          aria-expanded={expanded}
-          aria-label="show more"
-        >
+
+        <Box sx={{marginLeft:'20px'}}>
+       {'2 Reviews'}
+        </Box>
+        <Box sx={{marginLeft:'auto'}}>
+         <ExpandMore
+            sx={{marginLeft:'unset', fontSize:'1em'}}
+            onClick={handleExpandClick}
+            aria-expanded={expanded}
+            aria-label=" Reviews "
+            >
+           <CardContent>
+            {'See Reviews'}
+          </CardContent>
+          </ExpandMore>
+        </Box>
+          <ExpandMore
+            sx={{marginLeft:'unset'}}
+            expand={expanded}
+            onClick={handleExpandClick}
+            aria-expanded={expanded}
+            aria-label=" Reviews "
+          >
           <ExpandMoreIcon />
-        </ExpandMore>
+          </ExpandMore>
       </CardActions>
+
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
-        <div>
-          <Box sx={{background:'#f9f9f9', marginTop:'15px'}} className="ratingRowWrap">
-            <p>
-              <b>Have you been here?</b>
-              <br/>
-              Then submit your review below to
-            </p>
-            <Box sx={{ borderTop: 1, borderColor: 'divider', paddingTop:'20px' }}>
-            <div className="ratingRow">
-            <div>How was the taste : </div>
-                <Rating
-                  name="size-small"
-                  value={props.content.rating}
-                />
-            </div>
-            <br/>
-            <div className="ratingRow">
-            <div>How was the texture : </div>
-                <Rating
-                  name="size-small"
-                  value={props.content.rating}
-                />
-            </div>
-            <br/>
-            <div className="ratingRow">
-              
-              <div>How was the visual experience : </div>
-                <Rating
-                  name="size-small"
-                  value={props.content.rating}
-                />
-            </div>
+
+        <div className="ratingRow-container">
+            <Box sx={{display:'flex',flexDirection:'column', width:'100%'}} >
+                <Button variant="contained" onClick={()=>setShowReviewModal(true)}>Review this place</Button>
             </Box>
-            <Box sx={{display:'flex',flexDirection:'column', width:'100%', marginTop:'20px', paddingTop:'20px',borderTop: 1, borderColor: 'divider',}} >
-              <TextField
-                multiline
-                maxRows={4} 
-                onChange={()=>{}} 
-                label="Type you review here" />
-              <Button>Submit rating</Button>
+            <Box  className="ratingRowWrap">
+
+              <ReviewSpot setShowReviewModal={setShowReviewModal} showReviewModal={showReviewModal} />
+              <p>
+                <b>See all reviews for this burger spot here</b>
+              </p>
+                {
+                  [{text:'Awesome place'},{text:'Awesome place'}].map((v,i)=>{
+                    return <Review key={i} {...v} />
+                  })
+                }
             </Box>
-          </Box>
-        </div>
-          <p>
-            <b>Do they have Burgers?</b>
-            <p>
-              Yes they do!
-            </p>
-            <b>When are they open?</b>
-            <p>
-              Everyday 11-22
-            </p>
-          </p>
+          </div>
         </CardContent>
       </Collapse>
     </Card>

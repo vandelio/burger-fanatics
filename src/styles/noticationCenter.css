@@ -1,0 +1,43 @@
+
+@media screen and (min-width:980px) {
+    .notificationBadge{
+        position: fixed !important;
+        top:calc(100vh - 50px);
+        right:50px;
+    }
+}
+.notificationDrawer.MuiDrawer-modal .MuiDrawer-paper{
+    padding: 20px !important;
+    background:var(--lightdark) !important;
+    color:#fff;
+    height:80%;
+}
+.notificationsArea{
+    position:sticky;
+    top:80%;
+}
+
+.notificationDrawer.MuiDrawer-modal .MuiDrawer-paper h2,
+.notificationDrawer.MuiDrawer-modal .MuiDrawer-paper h3,
+.notificationDrawer.MuiDrawer-modal .MuiDrawer-paper h4,
+.notificationDrawer.MuiDrawer-modal .MuiDrawer-paper h5{
+    font-weight: bold;
+}
+.notificationDrawer::after{
+    pointer-events: none;
+    content:"Click here to close";
+    border-radius: 14px;
+    background:var(--lightdark);
+    color:var(--lightlight);
+    padding:6px 12px;
+    width:auto;
+    position:absolute;
+    bottom:0;
+    left:50%;
+    transform: translate(-50%, -4vh);
+    -webkit-transform: translate(-50%, -4vh);
+    -moz-transform: translate(-50%, -4vh);
+    -ms-transform: translate(-50%, -4vh);
+    -o-transform: translate(-50%, -4vh);
+    box-shadow: 0px 8px 10px -5px rgb(0 0 0 / 20%), 0px 16px 24px 2px rgb(0 0 0 / 14%), 0px 6px 30px 5px rgb(0 0 0 / 12%);
+}

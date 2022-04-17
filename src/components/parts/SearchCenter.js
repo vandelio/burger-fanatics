@@ -55,7 +55,9 @@ const SearchCenter = (props) => {
     
       freeSolo
       renderInput={(params) => (
-        <TextField {...params} label="Search for a resturant or city" />
+        <>
+          <TextField {...params} label="Search for a City or Burger spot" />
+        </>
       )}
     />
       );

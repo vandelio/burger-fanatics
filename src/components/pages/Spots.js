@@ -43,8 +43,8 @@ const reviewActivities = listOfReviewActivities;
 
 
   return (
-    <PageLayout parts={FeedTop()}>
-    <Box sx={{maxWidth:'500px', margin:'auto',}}>
+    <PageLayout>
+    <Box >
       <SearchCenter burgerSpots={burgerSpots} setSearchValue={setSearchResult} searchValue={searchResult} />  
     </Box>
     <Box sx={{ borderTop: 1, borderColor: 'divider', paddingTop:'20px' }}>
@@ -71,8 +71,8 @@ const reviewActivities = listOfReviewActivities;
             </Grid>
           </section>
 
-          <Box className="hideBelow980" sx={{ width: '30%',height:'100%', display: 'flex', paddingBottom:'20px', paddingLeft:'20px', flexDirection:'column' }}>
-            {/* newest rating activities */}
+          <Box className="hideBelow920" sx={{ width: '30%', minWidth:'295px',height:'100%', display: 'flex', paddingBottom:'20px', paddingLeft:'20px', flexDirection:'column' }}>
+            <div className="listHeadline">Recent Spot Activity</div>
             <List className="activity" list={reviewActivities} />
           </Box>
         </div>

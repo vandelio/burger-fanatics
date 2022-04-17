@@ -5,12 +5,17 @@ function PageLayout(props) {
 return (
 <>
     <Box
-        sx={{ width: '100%',height:'100%', display: 'flex', flexDirection:'column',borderBottom: 1, borderColor: 'divider' }}>
+        sx={{ width: '100%',height:'100%', display: 'flex', flexDirection:'column',}}>
         <Box sx={{ p: 3 }}>
-            <div className="pageTop">
-                {props.parts && <div>{props.parts}</div>}
-            </div>
-            <Divider/>
+        {props.parts &&  
+            <>
+                <div className="pageTop">
+                    <div>{props.parts}</div>
+                </div>
+
+                <Divider/>
+            </>
+        }
             <Box sx={{ marginTop:'0' }}>
                 {props.children}
             </Box>

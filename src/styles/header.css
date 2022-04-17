@@ -2,24 +2,28 @@
     background:var(--lightlight);
     position: sticky;
     top: 0; /* 88px*/
-    z-index: 10000;
+    z-index: 1000;
     height:auto;
     transform:translateY(-100);
     -webkit-transform:translateY(-100);
     -moz-transform:translateY(-100);
     -ms-transform:translateY(-100);
     -o-transform:translateY(-100);
+    border-bottom:1px solid var(--lightdark);
 }
-.showFull.head-container{
-    background:var(--lightlight);
-    position: sticky;
-    top: -88px; /* 88px*/
-    z-index: 10000;
+@media screen and (max-width:979px) {
+    .showFull.head-container{
+        background:var(--lightlight);
+        position: sticky;
+        top: -88px; /* 88px*/
+        z-index: 1000;
+    }
 }
-
 @media screen and (min-width:980px) {
-    section.head .head-container{
-        position: relative;
+    section.head .head-container,
+    section.head .head-container.showFull{
+        position: sticky;
+        top: 0 !important; /* 88px*/
     }
 }
 .head-container.showFull{
@@ -58,6 +62,9 @@ section.head{
     -o-transition:all 0.3s cubic-bezier(0.39, 0.575, 0.565, 1);
 
 }
+.head svg.logo{
+    color:var(--lightdark);
+}
 
 /* logo */
 section.head .logo{
@@ -79,6 +86,7 @@ section.head .logo{
 nav{
     position: relative;
     z-index: 100;
+    box-shadow: 1px 10px 10px 0px rgb(0 0 0 / 20%);
 }
 nav div{
     z-index:10000000;
@@ -109,20 +117,21 @@ nav button label{
         width: auto;
         align-self: flex-start;
         margin-right: 20px;
+        box-shadow: unset;
     }
 }
 /* Color theme classes */
 nav.dark-bg{
-    background:var(--darkdark);
+    background:var(--lightdark);
 }
 nav.dark-bg .MuiButtonBase-root *{
     color:var(--lightlight);
 }
 nav.dark-bg .MuiTabs-flexContainer .MuiButtonBase-root.Mui-selected *{
-    color:var(--highlight);
+    color:var(--darkdark);
 }
-nav.dark-bg .css-1aquho2-MuiTabs-indicator{
-    background-color:var(--highlight);
+nav.dark-bg .MuiTabs-indicator{
+    background-color:var(--lightdark) !important;
 }
 
 @media screen and (min-width:980px) {
@@ -139,8 +148,8 @@ nav.dark-bg .css-1aquho2-MuiTabs-indicator{
     nav.dark-bg .MuiTabs-flexContainer .MuiButtonBase-root.Mui-selected *{
         color:var(--darkdark);
     }
-    nav.dark-bg .css-1aquho2-MuiTabs-indicator{
-        background-color:var(--darkdark);
+    nav.dark-bg .MuiTabs-indicator{
+        background-color:var(--lightdark);
     }
     .MuiTabs-indicator {
         bottom:unset;

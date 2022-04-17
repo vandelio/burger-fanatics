@@ -37,10 +37,10 @@
         flex-direction: row;
     } */
     #root  .MuiGrid-item  .card-feed-item{
-        width:500px;
+        width:100%;
         flex-basis:500px;
-        max-width: 500px;
-        min-width: 500px !important;
+        max-width: unset;
+        min-width: unset !important;
         border-radius:4px;
         -webkit-border-radius:4px;
         -moz-border-radius:4px;
@@ -60,6 +60,10 @@
         -moz-border-radius:4px;
         -ms-border-radius:4px;
         -o-border-radius:4px;
+    }
+    .feed-container .MuiGrid-container{
+        max-width: 500px;
+        margin: auto;
     }
     
 }
