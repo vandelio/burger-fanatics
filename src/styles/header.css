@@ -126,6 +126,10 @@ nav.dark-bg .css-1aquho2-MuiTabs-indicator{
 }
 
 @media screen and (min-width:980px) {
+
+    nav.dark-bg .MuiButtonBase-root {
+        min-height: 92px;
+    }
     nav.dark-bg{
         background:var(--lightlight);
     }

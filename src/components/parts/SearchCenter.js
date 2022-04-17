@@ -33,6 +33,7 @@ const SearchCenter = (props) => {
           props.setSearchValue(newValue);
         }
       }}
+      autoHighlight
       selectOnFocus
       clearOnBlur
       handleHomeEndKeys

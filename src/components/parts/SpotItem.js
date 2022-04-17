@@ -1,6 +1,10 @@
 import * as React from 'react';
 import { styled } from '@mui/material/styles';
+import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
+
 import CardHeader from '@mui/material/CardHeader';
 import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
@@ -44,12 +48,13 @@ export default function RecipeReviewCard(props) {
         }
         action={
           <CardActions disableSpacing>
-            <IconButton aria-label="Calculated rating">
-            <Rating
-              readOnly
-              name="simple-controlled"
-              value={props.content.rating}
-            />
+            <IconButton  aria-label="Calculated rating">
+              <Rating
+                name="size-small"
+                size="small" 
+                readOnly
+                value={props.content.rating}
+              />
             </IconButton>
           </CardActions>
           
@@ -86,6 +91,49 @@ export default function RecipeReviewCard(props) {
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
+        <div>
+          <Box sx={{background:'#f9f9f9', marginTop:'15px'}} className="ratingRowWrap">
+            <p>
+              <b>Have you been here?</b>
+              <br/>
+              Then submit your review below to
+            </p>
+            <Box sx={{ borderTop: 1, borderColor: 'divider', paddingTop:'20px' }}>
+            <div className="ratingRow">
+            <div>How was the taste : </div>
+                <Rating
+                  name="size-small"
+                  value={props.content.rating}
+                />
+            </div>
+            <br/>
+            <div className="ratingRow">
+            <div>How was the texture : </div>
+                <Rating
+                  name="size-small"
+                  value={props.content.rating}
+                />
+            </div>
+            <br/>
+            <div className="ratingRow">
+              
+              <div>How was the visual experience : </div>
+                <Rating
+                  name="size-small"
+                  value={props.content.rating}
+                />
+            </div>
+            </Box>
+            <Box sx={{display:'flex',flexDirection:'column', width:'100%', marginTop:'20px', paddingTop:'20px',borderTop: 1, borderColor: 'divider',}} >
+              <TextField
+                multiline
+                maxRows={4} 
+                onChange={()=>{}} 
+                label="Type you review here" />
+              <Button>Submit rating</Button>
+            </Box>
+          </Box>
+        </div>
           <p>
             <b>Do they have Burgers?</b>
             <p>

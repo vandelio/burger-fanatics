@@ -12,21 +12,28 @@ import listOfReviewActivities from '../../hooks/listOfReviewActivities';
 
 function Spots() {
 const [burgerSpots,setBurgerSpots] = React.useState(listOfBurgerSpots);
-const [searchResult, setSearchResult] = React.useState('');
+const [searchResult, setSearchResult] = React.useState(null);
+// const [burgerSpotsToShow,setBurgerSpotsToShow] = React.useState([]);
 const reviewActivities = listOfReviewActivities;
 
-useEffect(()=>{
-  if(searchResult !== ''){
-    console.log(searchResult);
-    // let obj = burgerSpots.find(o => {
-    //   if(o.title.includes(searchValue) || o.desc.includes(searchValue)) return o;
-    // });
-    // console.log('serah', obj)
-    setBurgerSpots([searchResult]);
-  }else{
-    setBurgerSpots(listOfBurgerSpots);
-  }
-},[searchResult])
+// useEffect(()=>{
+//   setBurgerSpotsToShow(burgerSpots);
+// },[])
+// useEffect(()=>{
+//   console.log('searchResult', searchResult);
+//   console.log('listOfBurgerSpots', listOfBurgerSpots);
+
+//   if(searchResult !== ''){
+//     console.log(searchResult);
+//     // let obj = burgerSpots.find(o => {
+//     //   if(o.title.includes(searchValue) || o.desc.includes(searchValue)) return o;
+//     // });
+//     // console.log('serah', obj)
+//     setBurgerSpotsToShow([searchResult]);
+//   }else{
+//     setBurgerSpotsToShow(listOfBurgerSpots);
+//   }
+// },[searchResult])
 
   const FeedTop = () => {
     return <Box sx={{display:'flex', flexDirection:'row', alignItems:'center', justifyContent:'space-between'}}>
@@ -44,7 +51,18 @@ useEffect(()=>{
        <div className='flex-row flex-start'>
           <section className="flex-column feed-container">
             <Grid container justifyContent="center" spacing={2}>
-                {burgerSpots.map((v,i)=>{
+                {burgerSpots.filter((v)=>{
+                  if(searchResult !== null ){
+                    if(v.id === searchResult.id){
+                      return v; 
+                    }else{
+                      return null; 
+                    }
+                  }else{
+                      return v; 
+                  }
+                   
+                  }).map((v,i)=>{
                   return <Grid key={i} item>
                     <SpotItem key={i} content={v} />
                   </Grid>
