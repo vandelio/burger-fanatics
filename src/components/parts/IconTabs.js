@@ -1,11 +1,5 @@
-import * as React from 'react';
-import PropTypes from 'prop-types';
 import {Tabs,Tab} from '@mui/material';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
-import PhoneIcon from '@mui/icons-material/Phone';
 import {useCurrentWidth} from '../../hooks/useCurrentWidth';
-
 function a11yProps(index) {
   return {
     id: `simple-tab-${index}`,

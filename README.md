@@ -26,16 +26,15 @@ Social media and review platform for burger entusiasts
   - Find nearby resturants
   - Store Spots, Reviews (Users, Post, Interactions)
   
-# DB
-  
-  - Store {name, description, openinghours} for the Spots
-  - Store {spotid, reviewtext, image, ratingtaste, ratingtexture and ratingvisual} for the Spotreviews
-  - Store {is_following_ids, image, name, username, anonymous, createddate} for the Users
-  - Store {text, image, link} for the Usersposts
-  - Store {postid, like, share, comments} for the Interactions
+# DB example
+  - Store {title, description, calculatedrating, place, openinghours} for the Spots
+  - Store {text, image, ratingtaste, ratingtexture and ratingvisual, userid} for the Spotreviews
+  - Store {is_following_ids, image, name, username} for the Users
+  - Store {text, image, link, userid} for the Usersposts
+  - Store {postid or reviewid, like, share, comment} for the Interactions
 
 Based on those we could get these; 
-  - list of spots, with info and ratings
+  - list of spots, with info and reviews
   - list of user posts, with interactions
   - list of resent review activities
   - list of resent following activities
@@ -44,29 +43,31 @@ Based on those we could get these;
 # TODO
 
 
-  - Create landing page                                     - Priority 1
-  - Implement nav tabbar with 4 tabs                        - Priority 1
-    - Home
-    - Burger Spots
-    - My Profile
+  - Create landing page                                     - Done
+  - Implement nav tabbar with 3 tabs                        - Done
+    - Home                                                  - Done
+    - Burger Spots                                          - Done
+    - My Profile                                            - Done
 
   - Pages in project:
-    - Burger spots overview and search                      - Priority 1
-    - Single bruger spot page                               - Priority 1
-    - Login / sign up                                       - --
-    - My Profile                                            - --
+    - Home landingpage with feed                            - Done
+    - Burger spots overview and search                      - Done
+    - Login / sign up                                       - Done with amplify auth.
+    - My Profile                                            - Not a priority
   
   - Page overlays
-    - Edit My Profile             Overlayed on My Profile   - --
-    - Feed settings               Overlayed on Home         - --
-  
-  
-  - Start Setup DB 
-    - Store dummy Spots data                                - Priority 2
-    - Fetch Spots data                                      - Priority 2
-    - Organise the data the the markup                      - Priority 2
+    - Notifications/messages      Overlayed on Home         - Done
+    - Edit My Profile             Overlayed on My Profile   - Not a priority
 
-    -  Continue with                                        - Priority 3
-         Review data, 
-         User data, 
-         UserInteraction data
+
+  # Future prospects
+    - Add like/share/comment function on post, spots and reviews.
+    - Scrape resturant data, to find burgerspots with menu and location in order to display searchable burgerspots.
+    - Geo location for finding the spot near the user.
+    - Filter options on spot search
+    - Add Profile
+    - Add Groups
+    - Add follow User or Group
+    Etc. :)
+
+  

@@ -2,15 +2,18 @@
 @media screen and (min-width:980px) {
     .notificationBadge{
         position: fixed !important;
-        top:calc(100vh - 50px);
-        right:50px;
+        top: calc(100vh - 70px);
+        right: 50px;
     }
 }
 .notificationDrawer.MuiDrawer-modal .MuiDrawer-paper{
     padding: 20px !important;
     background:var(--lightdark) !important;
-    color:#fff;
     height:80%;
+}
+
+.notificationDrawer.MuiDrawer-modal .MuiDrawer-paper *{
+    color:var(--lightlight) !important;
 }
 .notificationsArea{
     position:sticky;
