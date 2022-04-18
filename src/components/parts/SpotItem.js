@@ -49,7 +49,7 @@ export default function RecipeReviewCard(props) {
     burgerHeadImage10,
   ];
 
-  const [reviewsForSpot, setReviewsForSpot] = React.useState([
+  const [reviewsForSpot, setReviewsForSpot] = useState([
     {
       text: "Awesome place",
       user: "Johnny",
