@@ -189,6 +189,8 @@ img,svg{
 }
 
 .sharingModalWrap{
+    width:100%;
+    max-width: 500px;
     position:absolute;
     top:50%;
     left:50%;
@@ -197,6 +199,10 @@ img,svg{
     -moz-transform:translate(-50%,-50%);
     -ms-transform:translate(-50%,-50%);
     -o-transform:translate(-50%,-50%);
+    background: var(--lightlight);
+}
+.sharingModalWrap main{
+    padding:20px;
 }
 @media screen and (max-width:480px) {
     .sharingModalWrap{

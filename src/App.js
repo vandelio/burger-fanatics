@@ -1,21 +1,16 @@
 import React, {useState, useEffect} from 'react';
 import { Amplify } from 'aws-amplify';
 import awsExports from './aws-exports';
-import ReactDOM from "react-dom";
 import IconTabs from "./components/parts/IconTabs";
 import Home from "./components/pages/Home";
-import Reviews from "./components/pages/Reviews";
 import Spots from "./components/pages/Spots";
 import MyProfile from "./components/pages/MyProfile";
 import NotificationCenter from './components/parts/NotificationCenter';
 import Logo from './components/parts/Logo';
 
 import LunchDiningIcon from '@mui/icons-material/LunchDining';
-import ThumbsUpDownIcon from '@mui/icons-material/ThumbsUpDown';
 import RoomOutlinedIcon from '@mui/icons-material/RoomOutlined';
 import FaceOutlinedIcon from '@mui/icons-material/FaceOutlined';
-
-import { Button, Flex, TextField } from '@aws-amplify/ui-react';
 
 import './styles/base.css';
 import './styles/header.css';
@@ -27,10 +22,7 @@ function App() {
   const [userComponent, setUserComponent] = useState(null)
   const [activePageIndex, setActivePageIndex] = useState(0);
   const [activePageName, setActivePageName] = useState(null);
-
-  const [showHeader, setShowHeader] = useState(true);
-
-  const componentIndexToName = [
+  const tabComponents = [
     {
       name:'Home',
       component:<Home/>,
@@ -49,15 +41,11 @@ function App() {
   ]
 
   useEffect(() => {
-    console.log('useEffect', componentIndexToName[activePageIndex]);
-    setActivePageName(componentIndexToName[activePageIndex].name)
-    setUserComponent(componentIndexToName[activePageIndex].component);
-    // setShowHeader(componentIndexToName[activePageIndex].name === 'Home'); 
+    setActivePageName(tabComponents[activePageIndex].name)
+    setUserComponent(tabComponents[activePageIndex].component);
   },[activePageIndex])
 
   if(userComponent === null || activePageName === null) return 'Loading...';
-
-  
   return (
     <>
       <div className={`head-container flex-column align-center-desktop showFull`}>
@@ -67,7 +55,7 @@ function App() {
             <Logo />
             <NotificationCenter />
           </section>
-          <IconTabs activePageIndex={activePageIndex} setActivePageIndex={setActivePageIndex} tablist={componentIndexToName}/>
+          <IconTabs activePageIndex={activePageIndex} setActivePageIndex={setActivePageIndex} tablist={tabComponents}/>
         </header>
       </div>
       <SwitchTransition>

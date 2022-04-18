@@ -9,8 +9,11 @@
 .notificationDrawer.MuiDrawer-modal .MuiDrawer-paper{
     padding: 20px !important;
     background:var(--lightdark) !important;
-    color:#fff;
     height:80%;
+}
+
+.notificationDrawer.MuiDrawer-modal .MuiDrawer-paper *{
+    color:var(--lightlight) !important;
 }
 .notificationsArea{
     position:sticky;
