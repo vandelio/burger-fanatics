@@ -66,7 +66,7 @@ export default function RecipeReviewCard(props) {
             </IconButton>
           </CardActions>
         }
-        title={props.user}
+        title={props.user.replace('-','').substring(0, 9) + ' ' + props.user.replace('-','').substring(10, 19)}
         subheader={moment().diff(props.createdAt, 'days') <= 4 ? moment().diff(props.createdAt, 'days') + ' days ago' : moment(props.createdAt).format('YYYY-MM-DD HH:SS ') }
       />
       {props.imagePath && (
