@@ -17,6 +17,7 @@ import { Badge } from "@mui/material";
 import Comment from "./Comment";
 import listOfComments from "../../hooks/listOfComments";
 import moment from "moment";
+import { useCurrentWidth } from "../../hooks/useCurrentWidth";
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -30,6 +31,7 @@ const ExpandMore = styled((props) => {
 }));
 
 export default function RecipeReviewCard(props) {
+  let width = useCurrentWidth();
   const [comments] = React.useState(
     props.comments
       ? props.comments
@@ -52,6 +54,7 @@ export default function RecipeReviewCard(props) {
           </Avatar>
         }
         action={
+          width >= 480 && (
           <CardActions disableSpacing>
             <IconButton aria-label="add to favorites">
               <Badge
@@ -65,9 +68,18 @@ export default function RecipeReviewCard(props) {
               <ShareIcon />
             </IconButton>
           </CardActions>
+          )
         }
-        title={props.user.replace('-','').substring(0, 9) + ' ' + props.user.replace('-','').substring(10, 19)}
-        subheader={moment().diff(props.createdAt, 'days') <= 4 ? moment().diff(props.createdAt, 'days') + ' days ago' : moment(props.createdAt).format('YYYY-MM-DD HH:SS ') }
+        title={
+          props.user.replace("-", "").substring(0, 9) +
+          " " +
+          props.user.replace("-", "").substring(10, 19)
+        }
+        subheader={
+          moment().diff(props.createdAt, "days") <= 4
+            ? moment().diff(props.createdAt, "days") + " days ago"
+            : moment(props.createdAt).format("YYYY-MM-DD HH:SS ")
+        }
       />
       {props.imagePath && (
         <CardMedia
@@ -85,7 +97,27 @@ export default function RecipeReviewCard(props) {
       {comments && (
         <>
           <CardActions disableSpacing onClick={handleExpandClick}>
-            <CardContent>{comments.length + " Comments"}</CardContent>
+            {width >= 480 ? (
+              <CardContent>{comments.length + " Comments"}</CardContent>
+            ) : (<>
+              <CardContent>
+                <IconButton aria-label="add to favorites">
+                  <Badge
+                    badgeContent={props.likes ? props.likes : 2}
+                    color="primary"
+                  >
+                    <FavoriteIcon />
+                  </Badge>
+                </IconButton>
+              </CardContent>
+
+              <CardContent>
+                <IconButton aria-label="share" className="noCursor">
+                  <ShareIcon />
+                </IconButton>
+              </CardContent>
+              </>
+            )}
 
             <ExpandMore
               expand={expanded}

@@ -13,8 +13,10 @@ import Avatar from "@mui/material/Avatar";
 import IconButton from "@mui/material/IconButton";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import ShareIcon from "@mui/icons-material/Share";
+import MapIcon from "@mui/icons-material/Room";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import getRandomFromArray from "../../hooks/getRandomFromArray";
+import { useCurrentWidth } from "../../hooks/useCurrentWidth";
 
 import burgerHeadImage6 from "../../assets/burgers/burger-006.jpg";
 import burgerHeadImage7 from "../../assets/burgers/burger-007.jpg";
@@ -38,6 +40,7 @@ const ExpandMore = styled((props) => {
 }));
 
 export default function RecipeReviewCard(props) {
+  const width = useCurrentWidth();
   const [expanded, setExpanded] = useState(false);
   const [expandedDesc, setExpandedDesc] = useState(false);
   const [showReviewModal, setShowReviewModal] = useState(false);
@@ -98,7 +101,8 @@ export default function RecipeReviewCard(props) {
           </Avatar>
         }
         action={
-          <CardActions disableSpacing>
+          width >= 480 && (
+          <CardActions>
             <Rating
               name="size-small"
               size="small"
@@ -106,62 +110,70 @@ export default function RecipeReviewCard(props) {
               value={Number(props.content.rating)}
             />
           </CardActions>
+          )
         }
         title={props.content.title}
         subheader={props.content.place}
       />
+      {/* Rating overlay image on mobile */}
+      {
+        width < 480 && (
+          <CardActions sx={{width:'auto',position:'absolute',right:'24px'}}>
+            <Rating
+              name="size-small"
+              size="small"
+              readOnly
+              value={Number(props.content.rating)}
+            />
+          </CardActions>
+        )
+      }
       <CardMedia
         component="img"
         image={props.content.imagePath}
         alt="Best Burgers In Town"
       />
       <CardContent>
-        {expandedDesc && (
-          <Collapse in={expandedDesc} timeout="auto" unmountOnExit>
-            <p>{props.content.desc}</p>
-          </Collapse>
-        )}
-        {!expandedDesc && (
-          <p>{props.content.desc.substring(0, 100) + ". . . ."}</p>
-        )}
+        
+        
+           
+              <Box sx={{display:'flex', flexDirection:'column'}} onClick={handleExpandDescClick}>
+                {expandedDesc && (
+                  <Collapse in={expandedDesc} timeout="auto" unmountOnExit>
+                    <p>{props.content.desc}  <u className="readmore">Click to read less</u></p>
+                  </Collapse>
+                )}
+                {!expandedDesc && ( <p>
+                    {props.content.desc.substring(0, 100) + "... " }
+                    <u className="readmore">Click to read more</u>
+                    </p>
+                )}
+
+              </Box>
+         
+        
         <Box sx={{ display: "flex", fontSize: "1em" }}>
-          <Box sx={{ display: "flex", flexDirection: "column" }}>
+          <Box sx={{ display: "flex", flexDirection: "column", marginBottom:'20px' }}>
             <b>Opening hours:</b>
             <div>{props.content.openinghours}</div>
           </Box>
-          <ExpandMore
-            sx={{ display: "flex", fontSize: "1em" }}
-            onClick={handleExpandDescClick}
-            aria-expanded={expandedDesc}
-            aria-label=" Reviews "
-          >
-            <CardContent>
-              {expandedDesc ? "Read less" : "Read more"}
-            </CardContent>
-          </ExpandMore>
         </Box>
-        <br />
       </CardContent>
       <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
+        <IconButton title="Add a like" aria-label="add a like">
           <FavoriteIcon />
         </IconButton>
-        <IconButton aria-label="share">
+        <IconButton  title="Share with friends" aria-label="share">
           <ShareIcon />
         </IconButton>
+        <IconButton title="find on map" aria-label="find location">
+          <MapIcon />
+        </IconButton>
 
-        <Box sx={{ marginLeft: "20px" }}>{"2 Reviews"}</Box>
-        <Box sx={{ marginLeft: "auto" }}>
-          <ExpandMore
-            sx={{ marginLeft: "unset", fontSize: "1em" }}
-            onClick={handleExpandClick}
-            aria-expanded={expanded}
-            aria-label=" Reviews "
-          >
-            <CardContent>{"See Reviews"}</CardContent>
-          </ExpandMore>
+        <Box title="See reviews" sx={{ marginLeft: "auto" }}>
+          <CardContent  onClick={handleExpandClick}><p className="readmore">See Reviews</p></CardContent>
         </Box>
-        <ExpandMore
+        <ExpandMore title="See reviews"
           sx={{ marginLeft: "unset" }}
           expand={expanded}
           onClick={handleExpandClick}
