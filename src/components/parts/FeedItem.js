@@ -16,6 +16,7 @@ import "../../styles/feed.css";
 import { Badge } from "@mui/material";
 import Comment from "./Comment";
 import listOfComments from "../../hooks/listOfComments";
+import moment from "moment";
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -66,7 +67,7 @@ export default function RecipeReviewCard(props) {
           </CardActions>
         }
         title={props.user}
-        subheader={props.createdAt}
+        subheader={moment().diff(props.createdAt, 'days') + ' days ago'}
       />
       {props.imagePath && (
         <CardMedia
