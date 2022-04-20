@@ -33,16 +33,16 @@ Social media and review platform for burger entusiasts
   
 # DB example
   - Store {title, description, calculatedrating, place, openinghours} for the Spots
-  - Store {text, image, ratingtaste, ratingtexture and ratingvisual, userid} for the Spotreviews
+  - Store {text, image, ratingtaste, ratingtexture and ratingvisual, userid, spotid} for the Spotreviews
   - Store {is_following_ids, image, name, username} for the Users
-  - Store {text, image, link, userid} for the Usersposts
-  - Store {postid or reviewid, like, share, comment} for the Interactions
+  - Store {text, image, link, userid} for the Userposts
+  - Store {postid or reviewid, reviewtype, like, share, comment, userid} for the Interactions
 
 Based on those we could get these; 
   - list of spots, with info and reviews
   - list of user posts, with interactions
-  - list of resent review activities
-  - list of resent following activities
+  - list of recent review activities
+  - list of recent following activities
 
 
 # TODO
@@ -56,16 +56,16 @@ Based on those we could get these;
     - Home landingpage with feed                            - Done
     - Burger spots overview and search                      - Done
     - Login / sign up                                       - Done with amplify auth.
-    - My Profile                                            - Not a priority
+    - My Profile                                            - It's there, but not a priority
   
   - Page overlays
     - Notifications/messages      Overlayed on Home         - Done
-    - Edit My Profile             Overlayed on My Profile   - Not a priority
+    - Edit My Profile             Overlayed on My Profile   - It's there, but not a priority
 
 
   # Future prospects
     - Add like/share/comment function on post, spots and reviews.
-    - Scrape resturant data, to find burgerspots with menu and location in order to display searchable burgerspots.
+    - Scrape restaurants data, to find burgerspots with menu and location, in order to display searchable burgerspots.
     - Geo location for finding the spot near the user.
     - Filter options on spot search
     - Add Profile
