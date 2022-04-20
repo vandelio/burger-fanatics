@@ -26,6 +26,12 @@
     padding-bottom:0;
 }
 
+.readmore{
+    cursor: pointer;
+    font-size: 0.9em;
+    color:var(--lightdark);
+}
+
 @media screen and (min-width:540px) {
     #root  .MuiGrid-item  .card-feed-item{
         width:100%;
