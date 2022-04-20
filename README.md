@@ -24,7 +24,6 @@ Social media and review platform for burger entusiasts
   - Review local burger spots - rating
   - Share pictures of burgers
   - Find nearby resturants
-  - Store Spots, Reviews (Users, Post, Interactions)
   
 # DB example
   - Store {title, description, calculatedrating, place, openinghours} for the Spots
