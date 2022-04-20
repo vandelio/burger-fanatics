@@ -21,9 +21,12 @@ Social media and review platform for burger entusiasts
  - Test the deployed amplify project                        - 👍
 
 # Project Requirements
-  - Review local burger spots - rating
-  - Share pictures of burgers
-  - Find nearby resturants
+  - Find nearby restaurants with burgers on the menu
+  - See reviews for burger spots and give reviews with rating
+  - Share pictures of burgers in the reviews
+  - Share a post to make it a social media
+
+
   
 # DB example
   - Store {title, description, calculatedrating, place, openinghours} for the Spots
@@ -40,8 +43,6 @@ Based on those we could get these;
 
 
 # TODO
-
-
   - Create landing page                                     - Done
   - Implement nav tabbar with 3 tabs                        - Done
     - Home                                                  - Done
