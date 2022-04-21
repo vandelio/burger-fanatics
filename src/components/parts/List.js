@@ -13,7 +13,7 @@ const List = (props) => {
       return props.rating.map((v,i) => {
         return (
           <>
-            <Rating readOnly name="simple-controlled" title={()=>{['taste','texture','visual'].filter((vv,ii)=>{if(i === i) return v;})}} value={v} />
+            <Rating key={i} readOnly name="simple-controlled" />
           </>
         );
       });
@@ -25,7 +25,7 @@ const List = (props) => {
         <Card className={props.className} key={index} padding="1rem">
           <div>
             <Heading level={6} fontWeight={"400"}>
-              {item.title}
+              {item.title && item.title}
             </Heading>
             <Text>{item.description || item.text}</Text>
             <small>{item.place}</small>

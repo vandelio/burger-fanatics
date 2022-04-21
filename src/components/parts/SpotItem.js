@@ -112,7 +112,7 @@ export default function RecipeReviewCard(props) {
           </CardActions>
           )
         }
-        title={props.content.title}
+        title={props.content.title && props.content.title}
         subheader={props.content.place}
       />
       {/* Rating overlay image on mobile */}
@@ -160,20 +160,20 @@ export default function RecipeReviewCard(props) {
         </Box>
       </CardContent>
       <CardActions disableSpacing>
-        <IconButton title="Add a like" aria-label="add a like">
+        <IconButton  aria-label="add a like">
           <FavoriteIcon />
         </IconButton>
-        <IconButton  title="Share with friends" aria-label="share">
+        <IconButton  aria-label="share">
           <ShareIcon />
         </IconButton>
-        <IconButton title="find on map" aria-label="find location">
+        <IconButton  aria-label="find location">
           <MapIcon />
         </IconButton>
 
-        <Box title="See reviews" sx={{ marginLeft: "auto" }}>
+        <Box  sx={{ marginLeft: "auto" }}>
           <CardContent  onClick={handleExpandClick}><p className="readmore">See Reviews</p></CardContent>
         </Box>
-        <ExpandMore title="See reviews" 
+        <ExpandMore  
           sx={{ marginLeft: "unset" }}
           expand={expanded}
           onClick={handleExpandClick}

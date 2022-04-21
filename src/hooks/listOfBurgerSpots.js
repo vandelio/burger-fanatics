@@ -82,7 +82,7 @@ rating: '5',
   },
   {
     id:"11",
-title: "Café Knuth's - Skagen",
+title: "Café Knuths - Skagen",
     desc:'All of our menu items are inspired by national cuisine and have been created by our head chef, (CN), after studying authentic national cuisine in ____. Not only do we have fresh flown-in seafood from the northeast, but we also have a variety of handcrafted cocktails, wine, and beer to choose from, and the best burgers in the world.  Come dine with us & experience an authentic national_ meal in an intimate dining space. We look forward to serving you!', 
 rating: '5',
     place: 'Skagen',
