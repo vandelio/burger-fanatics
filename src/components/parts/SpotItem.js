@@ -173,7 +173,7 @@ export default function RecipeReviewCard(props) {
         <Box title="See reviews" sx={{ marginLeft: "auto" }}>
           <CardContent  onClick={handleExpandClick}><p className="readmore">See Reviews</p></CardContent>
         </Box>
-        <ExpandMore title="See reviews"
+        <ExpandMore title="See reviews" 
           sx={{ marginLeft: "unset" }}
           expand={expanded}
           onClick={handleExpandClick}
