@@ -19,7 +19,7 @@ const List = (props) => {
       });
     }
   };
-  return (
+  return ( 
     <Collection type="list" items={props.list} gap="1.5rem" width={"100%"}>
       {(item, index) => (
         <Card className={props.className} key={index} padding="1rem">
